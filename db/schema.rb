@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_12_144636) do
+ActiveRecord::Schema.define(version: 2022_06_12_153412) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,9 +47,19 @@ ActiveRecord::Schema.define(version: 2022_06_12_144636) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "images", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.string "description"
+    t.index ["user_id"], name: "index_images_on_user_id"
+  end
+
 # Could not dump table "users" because of following StandardError
 #   Unknown type 'albums' for column 'user'
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "images", "users"
 end

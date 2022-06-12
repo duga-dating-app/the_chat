@@ -10,8 +10,7 @@
 
   <%= f.label :image %>
   <%= f.file_field :image %>
-  <%= f.label :album_photos %>
-   <%= f.file_field :album_photos, :multiple => true %>
+
   <div class="field"> 
     <%= f.label :city %>
     <%= f.text_field :city, :value => resource.city %>
@@ -55,6 +54,7 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
+<%= link_to "Your images", images_path %>
 
 <h3>Cancel my account</h3>
 
