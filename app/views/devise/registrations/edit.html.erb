@@ -54,9 +54,13 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
-<%= link_to "Your images", images_path %>
 
-<h3>Cancel my account</h3>
+<h2> Your images </h2>
+  <% resource.images.each do |image| %>
+    <%= image_tag image.photo, :width => 200, :height => 200 %>
+  <% end %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+Link to <%= link_to "Your images", images_path %>
+
+ <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 

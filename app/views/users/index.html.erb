@@ -2,13 +2,11 @@
 <ul>
   <% @users.each do |user| %>
     <li>
-      <%= user.email %> | <%= user.age %>
-
-      Profile Photo: <%= image_tag user.image, :width => 200, :height => 200 %>
-
-   Other images  <% user.images.each do |image| %>
-      <%= image_tag image.photo, :width => 200, :height => 200 %>
-     <% end %>
+      <%= link_to user.email, user %>| <%= user.age %>
+     
+      <% if user.image.attached? %>
+        <%= image_tag user.image, :width => 200, :height => 200 %>
+      <% end %>
     </li>
   <% end %>
 </ul>
