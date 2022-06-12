@@ -3,11 +3,12 @@
   <% @users.each do |user| %>
     <li>
       <%= user.email %> | <%= user.age %>
-       <% if user.image.attached? %>
-        <div>
-          <%= image_tag user.image, :alt => 'product_image', :width => 200, :height => 200 %>
-        </div>
-       <% end %>
+      
+
+     <% user.album_photos.each do |photo| %>
+      <%= image_tag photo, :alt => 'other photos', :width => 200, :height => 200 %>
+      
+     <% end %>
     </li>
   <% end %>
 </ul>
