@@ -4,8 +4,12 @@ class ButtonComponent < ViewComponent::Base
   attr_accessor :type
 
   PRIMARY_CLASSES = %w[
-    bg-black
-    text-white
+    bg-white
+    text-black
+    block
+    mx-auto
+    my-4
+    w-full
   ].freeze
   OUTLINE_CLASSES = %w[
     hover:bg-gray-200
@@ -16,27 +20,18 @@ class ButtonComponent < ViewComponent::Base
     border-purple-600
     text-purple-600
   ].freeze
-  DANGER_CLASSES = %w[
-    hover:bg-red-600
-    focus:bg-red-600
-    disabled:bg-red-300
-    bg-red-500
-    text-white
-  ].freeze
   BASE_CLASSES = %w[
     cursor-pointer
     font-bold 
     block
     px-4
     py-2
-    text-3xl 
+    text-lg 
     font-bold 
-    underline
   ].freeze
 
   BUTTON_TYPE_MAPPINGS = {
     primary: PRIMARY_CLASSES,
-    danger: DANGER_CLASSES,
     outline: OUTLINE_CLASSES
   }.freeze
 
