@@ -27,7 +27,8 @@ class ButtonComponent < ViewComponent::Base
     cursor-pointer
     font-bold 
     block
-    p-4
+    px-4
+    py-2
     text-3xl 
     font-bold 
     underline
