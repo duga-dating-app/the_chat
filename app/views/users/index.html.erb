@@ -1,6 +1,10 @@
-<h1>Users#index</h1>
-<%= search_form_for @q do |f| %>
+<h1 class="mt-6">Users#index</h1>
 
+<%= render(ButtonComponent.new(type: :primary)) do %>
+    Submit
+<% end %>
+
+<%= search_form_for @q do |f| %>
   # Search if the name field contains...
   <%= f.label :email_cont %>
   <%= f.search_field :email_cont %>
