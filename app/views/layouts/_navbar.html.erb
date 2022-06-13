@@ -1,7 +1,7 @@
  <%= render(LayoutComponent.new(type: :full_width)) do %>
     <nav class="fixed top-0 left-0 right-0 py-4 px-12">
         <ul class="flex">
-            <li class="mx-4"> Home </li>
+            <li><%= link_to 'Your Conversations', conversations_path %></li>
             <li class="mx-4">
                 <% if user_signed_in? %>
                     <%= link_to 'Users', users_path %>

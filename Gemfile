@@ -21,6 +21,8 @@ gem 'devise'
 gem 'image_processing', '~> 1.2'
 gem 'ransack'
 gem "view_component", require: "view_component/engine"
+gem 'mailboxer'
+gem 'will_paginate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
