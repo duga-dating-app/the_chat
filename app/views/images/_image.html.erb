@@ -1,7 +1,12 @@
 <div id="<%= dom_id image %>">
-  <%= image_tag image.photo, :width => 200, :height => 200 %>
+  <%= image_tag image.photo, :width => 200, :height => 200, class: "mb-4" %>
   <% if action_name != "show" %>
-    <%= link_to "Show this image", image, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this image', edit_image_path(image), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= render(ButtonComponent.new(type: :white)) do %> 
+        <%= link_to "Show this image", image %>
+    <% end %> 
+
+    <%= render(ButtonComponent.new(type: :white)) do %> 
+      <%= link_to 'Edit this image', edit_image_path(image) %>
+    <% end %> 
   <% end %>
 </div>

@@ -1,3 +1,4 @@
+// https://coolors.co/010400-30332e-fffbfc-62bbc1-ec058e
 module.exports = {
     content: [
       './app/helpers/**/*.rb',
@@ -8,7 +9,7 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          'blue': "#14213D",
+          'blue': "#62BBC1",
         },
       },
     },

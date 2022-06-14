@@ -6,10 +6,15 @@ class ButtonComponent < ViewComponent::Base
   PRIMARY_CLASSES = %w[
     bg-white
     text-black
-    block
     mx-auto
     my-4
     w-full
+    rounded-lg 
+    font-medium
+  ].freeze
+  SECONDARY_CLASSES = %w[
+    bg-blue
+    text-white
   ].freeze
   OUTLINE_CLASSES = %w[
     hover:bg-gray-200
@@ -22,17 +27,19 @@ class ButtonComponent < ViewComponent::Base
   ].freeze
   BASE_CLASSES = %w[
     cursor-pointer
-    font-bold 
-    block
     px-4
     py-2
-    text-lg 
-    font-bold 
+    font-medium
   ].freeze
-
+  WHITE_CLASSES = %w[
+    bg-gray-100 
+    inline-block 
+  ].freeze
   BUTTON_TYPE_MAPPINGS = {
     primary: PRIMARY_CLASSES,
-    outline: OUTLINE_CLASSES
+    outline: OUTLINE_CLASSES,
+    white: WHITE_CLASSES,
+    secondary: SECONDARY_CLASSES
   }.freeze
 
   def initialize(type: :primary)
