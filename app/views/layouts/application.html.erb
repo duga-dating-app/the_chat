@@ -12,6 +12,10 @@
   </head>
   <body>
   <%= render "layouts/navbar" %>
+  <% if current_user.username.empty? || current_user.age.nil? || current_user.gender.empty? || current_user.sexuality.empty? || !current_user.image.attached? %>
+  <p> Molimo te da dovrsis svoj profil </p>
+  <%= link_to "Update your profile", edit_user_registration_path %>
+  <% end %>
   <%= render(LayoutComponent.new(type: :full_width)) do %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
